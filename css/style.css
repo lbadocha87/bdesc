@@ -1,17 +1,91 @@
 /* css reset */
+#prod-desc-container h2,
+#prod-desc-container h3,
+#prod-desc-container h4,
+#prod-desc-container h5 {
+  font-size: 18px;
+  color: #1c1c1b;
+  font-weight: 600;
+  margin-top: 30px;
+}
+#prod-desc-container div {
+  text-align: left;
+}
+#prod-desc-container .clearfix {
+  float: right;
+  margin: 0 10px 0 0;
+  width: 168px;
+}
+#prod-desc-container img.lazy {
+  width: 100%;
+}
+#prod-desc-container ul,
+#prod-desc-container ol {
+  margin: 5px 0 0;
+  padding: 0;
+}
+#prod-desc-container ol > li {
+  margin: 0 0 0 15px;
+  padding: 0 0 5px 0;
+}
+#prod-desc-container ul > li {
+  margin: 0;
+  padding: 0 0 5px 15px;
+  position: relative;
+}
+#prod-desc-container ul > li:after {
+  display: block;
+  content: "";
+  width: 6px;
+  height: 6px;
+  border-radius: 50%;
+  position: absolute;
+  top: 8px;
+  left: 3px;
+  background: #1c1c1b;
+}
+#prod-desc-container .tooltip {
+  display: block;
+  position: absolute;
+  top: 0;
+  left: 0;
+  z-index: 2;
+  max-width: 400px;
+  padding: 10px;
+  border: 1px solid #ccc;
+  visibility: hidden;
+  background-color: #fff;
+}
+
+#prod-desc-container .tooltip:after,
+#prod-desc-container .tooltip:before {
+  position: absolute;
+  content: "";
+  width: 0;
+  height: 0;
+}
+#prod-desc-container .clear {
+  height: 1px;
+  overflow: hidden;
+  background: transparent;
+}
+
+/* css custom */
 #prod-desc-container,
 #prod-desc-container * {
   box-sizing: border-box;
   font-family: Lato, sans-serif;
 }
+
 #prod-desc-container {
   font-size: 16px;
   max-width: 920px;
   margin: 0 auto;
   font-family: sans-serif;
 }
+
 #prod-desc-container .headline-2 {
-  font-size: 1.5em;
+  font-size: 18px;
   margin: 0.83em 0;
   text-align: center;
   text-transform: none;
@@ -51,21 +125,13 @@
   text-overflow: ellipsis;
 }
 
-#prod-desc-container .headline-4 {
-  font-size: 1em;
-  margin: 1.33em 0;
-}
 #prod-desc-container .paragraph {
   margin: 1em 0;
   font-size: 13px;
   margin-top: 5px;
   color: #626262;
 }
-#prod-desc-container .desk-list {
-  margin: 1em 0;
-  padding: 0 0 0 20px;
-  list-style-position: outside;
-}
+
 #prod-desc-container .desc-img.lazy,
 #prod-desc-container .desc-img {
   width: initial;
@@ -73,53 +139,39 @@
   height: auto;
 }
 
-/* custom style */
 #prod-desc-container .flex-container {
   display: flex;
   flex-wrap: wrap;
   flex-direction: row;
 }
+
 #prod-desc-container .col {
   padding: 1em;
 }
+
 #prod-desc-container .col-1 {
   width: 100%;
 }
+
 #prod-desc-container .col-2 {
   width: 50%;
 }
+
 #prod-desc-container .col-3 {
   width: 33.33%;
 }
-#prod-desc-container .col-4 {
-  width: 25%;
-}
-#prod-desc-container .col.right {
-  justify-content: flex-end;
-  text-align: right;
-  display: flex;
-  flex-wrap: wrap;
-  align-content: center;
-}
-#prod-desc-container .col.center {
-  justify-content: center;
-  text-align: center;
-  display: flex;
-  flex-wrap: wrap;
-  align-content: flex-start;
-}
 
-#prod-desc-container .bullets {
+#prod-desc-container .bullet {
   margin-bottom: 30px;
   display: flex;
 }
 
-#prod-desc-container .bullets .number-holder {
+#prod-desc-container .bullet .number-holder {
   width: 10%;
   text-align: center;
 }
 
-#prod-desc-container .bullets span {
+#prod-desc-container .bullet span {
   border-radius: 50%;
   background: #017bc3;
   color: #fff;
@@ -132,16 +184,17 @@
   font-size: 14px;
 }
 
-#prod-desc-container .bullets p {
+#prod-desc-container .bullet p {
   font-size: 13px;
   color: #626262;
   width: 90%;
   margin: 0;
 }
 
-#prod-desc-container .bullets p.bold {
+#prod-desc-container .bullet p.bold {
   font-weight: 700;
   line-height: 25px;
+  font-size: 14px;
 }
 
 @media screen and (max-width: 919px) {
@@ -151,21 +204,12 @@
   }
   #prod-desc-container .col-1,
   #prod-desc-container .col-2,
-  #prod-desc-container .col-3,
-  #prod-desc-container .col-4 {
+  #prod-desc-container .col-3 {
     width: 100%;
     text-align: center;
   }
 
   #prod-desc-container .mobile-align-left {
     text-align: left;
-  }
-
-  #prod-desc-container .col.right {
-    justify-content: flex-start;
-    text-align: left;
-  }
-  #prod-desc-container .flex-container.revert {
-    flex-direction: column-reverse;
   }
 }
